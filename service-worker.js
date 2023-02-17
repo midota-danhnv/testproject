@@ -6,8 +6,9 @@ precacheAndRoute(self.__WB_MANIFEST);
 var urls = ['/',`${process.env.BASE_URL}NoName`]
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open('top').then(function(cache) {
+    caches.open('v1').then(function(cache) {
       urls.forEach(function (url) {
+        console.log(url)
         cache.add(url).catch(/* optional error handling/logging */);
       });
     })
