@@ -1,3 +1,8 @@
+import {precacheAndRoute} from 'workbox-precaching';
+
+precacheAndRoute(self.__WB_MANIFEST);
+
+
 var urls = ['/']
 window.addEventListener('install', function(event) {
   event.waitUntil(
