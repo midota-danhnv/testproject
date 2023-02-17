@@ -7,9 +7,5 @@ module.exports = defineConfig({
     msTileColor: "#000000",
     appleMobileWebAppCapable: "yes",
     appleMobileWebAppStatusBarStyle: "black",
-    workboxPluginMode: 'InjectManifest',
-    workboxOptions: {
-      swSrc: './service-worker.js'
-    }
   }
 })
