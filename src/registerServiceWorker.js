@@ -2,8 +2,8 @@
 
 import { register } from 'register-service-worker'
 const function1 = ()  =>{
-  console.log('12321312')
   if (process.env.NODE_ENV === 'production') {
+    console.log(window.location.href)
     register(`${window.location.href}service-worker.js`, {
       ready () {
         console.log(
