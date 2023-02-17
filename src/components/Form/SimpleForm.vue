@@ -70,6 +70,7 @@
 
 <script>
 import { openDB } from "idb";
+import function1 from '../../registerServiceWorker'
 const dbPromise = openDB("valqua-spm", 1, {
   upgrade(db) {
     db.createObjectStore("conservationReports");
@@ -88,6 +89,7 @@ export default {
     };
   },
   mounted() {
+    function1()
     dbPromise
       .then((db) => {
         return db.get("conservationReports", "conservationReports");
