@@ -25,6 +25,8 @@ self.addEventListener('fetch', function(event) {
     event.respondWith(caches.match(event.request).then(function(response) {
       // caches.match() always resolves
       // but in case of success response will have value
+      console.log('response',response)
+      console.log('fetch',response)
       if (response !== undefined) {
         return response;
       } else {
