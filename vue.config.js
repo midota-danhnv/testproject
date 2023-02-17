@@ -10,7 +10,7 @@ module.exports = defineConfig({
     //workboxPluginMode: 'GenerateSW',
     workboxPluginMode: 'InjectManifest',
     workboxOptions: {
-      swSrc: './src/service-worker.js'
+      swSrc: './service-worker.js'
     }
   }
 })
