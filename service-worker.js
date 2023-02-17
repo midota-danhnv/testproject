@@ -12,13 +12,12 @@ self.addEventListener('install', function(event) {
       });
     })
   );
-  console.log(event.waitUntil(
-    caches.open('v1').then(function(cache) {
-      urls.forEach(function (url) {
-        cache.add(url).catch(/* optional error handling/logging */);
-      });
-    })
-  ))
+  caches.open('v1').then(function(cache) {
+    console.log(cache)
+  })
+  caches.open('top').then(function(cache) {
+    console.log(cache)
+  })
 });
 
 self.addEventListener('fetch', function(event) {
