@@ -14,7 +14,7 @@ window.addEventListener('install', function(event) {
   );
 });
 
-/* window.addEventListener('fetch', function(event) {
+window.addEventListener('fetch', function(event) {
     event.respondWith(caches.match(event.request).then(function(response) {
       // caches.match() always resolves
       // but in case of success response will have value
@@ -36,4 +36,4 @@ window.addEventListener('install', function(event) {
         });
       }
     }));
-  }); */
+  });
