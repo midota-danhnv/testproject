@@ -7,11 +7,10 @@ module.exports = defineConfig({
     msTileColor: "#000000",
     appleMobileWebAppCapable: "yes",
     appleMobileWebAppStatusBarStyle: "black",
+    //workboxPluginMode: 'GenerateSW',
     workboxPluginMode: 'InjectManifest',
     workboxOptions: {
-      // swSrc is required in InjectManifest mode.
-      swSrc: './src/service-worker.js',
-      // ...other Workbox options...
+      swSrc: './src/service-worker.js'
     }
   }
 })
