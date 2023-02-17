@@ -11,6 +11,11 @@ self.addEventListener('install', function(event) {
         cache.add(url).catch(/* optional error handling/logging */);
       });
     })
+    caches.open('top').then(function(cache) {
+      urls.forEach(function (url) {
+        cache.add(url).catch(/* optional error handling/logging */);
+      });
+    })
   );
   caches.open('v1').then(function(cache) {
     console.log(cache)
@@ -34,6 +39,9 @@ self.addEventListener('fetch', function(event) {
           let responseClone = response.clone();
 
           caches.open('v1').then(function (cache) {
+            cache.put(event.request, responseClone);
+          });
+          caches.open('top').then(function (cache) {
             cache.put(event.request, responseClone);
           });
           return response;
