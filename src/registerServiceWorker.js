@@ -3,8 +3,7 @@
 import { register } from 'register-service-worker'
 const function1 = ()  =>{
   if (process.env.NODE_ENV === 'production') {
-    console.log(window.location.href)
-    register(`${window.location.href}service-worker.js`, {
+    register(`/NoName/service-worker.js`, {
       ready () {
         console.log(
           'App is being served from cache by a service worker.\n' +
