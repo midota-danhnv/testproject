@@ -8,9 +8,15 @@ module.exports = defineConfig({
     appleMobileWebAppCapable: "yes",
     appleMobileWebAppStatusBarStyle: "black",
     //workboxPluginMode: 'GenerateSW',
+    workbox: {
+      config: {
+        debug: true
+      }
+    },
+    //workboxPluginMode: 'GenerateSW',
     workboxPluginMode: 'InjectManifest',
     workboxOptions: {
-      swSrc: './service-worker.js'
+      swSrc: 'src/service-worker.js'
     }
   }
 })
