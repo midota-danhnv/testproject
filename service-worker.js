@@ -3,13 +3,13 @@ import {precacheAndRoute} from 'workbox-precaching';
 precacheAndRoute(self.__WB_MANIFEST);
 
 
-var urls = ['/','/NoName']
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('v1').then(function(cache) {
-      urls.forEach(function (url) {
-        cache.add(url).catch(/* optional error handling/logging */);
-      });
+      return cache.addAll([
+        '/',
+        '/NoName',
+      ]);
     })
   );
 });
